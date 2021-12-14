@@ -20,7 +20,7 @@ bq_github_table_id = bq_dataset_name + '.repo_watchlist_query'
 output_file = 'gs://us-central1-composer-demo-32dddf6c-bucket/watchlist' + datetime.datetime.now().strftime(
     '%Y-%m-%d') + '.csv'
 
-with DAG('demo_dag', schedule_interval=datetime.timedelta(days=1), default_args=default_dag_args,) as dag:
+with DAG('repo_watch_count_dag', schedule_interval=datetime.timedelta(days=1), default_args=default_dag_args,) as dag:
 
     github_repo_watchlist_query = BigQueryExecuteQueryOperator(
         task_id='github_repo_watchlist_query',
