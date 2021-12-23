@@ -1,0 +1,4 @@
+steps:
+  - name: 'gcr.io/cloud-builders/gsutil'
+    args: ['-m', 'rsync', '-d', '-r', 'dags', 'gs://us-central1-composer-demo-32dddf6c-bucket/dags']
+timeout: 600s
